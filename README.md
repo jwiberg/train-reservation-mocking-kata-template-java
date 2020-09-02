@@ -1,5 +1,5 @@
 # train-reservation-mocking-kata-template-java
-Template for practicing mocking, integration and testing unit testing when integrating to background services with Java.
+Template for practicing mocking, integration and unit testing when integrating to background services with Java.
 
 ## Prerequisites
 * Java 8+
