@@ -18,3 +18,11 @@ build
 
 # IDEA Stuff
 .idea/
+
+# OSX Stuff
+.DS_Store
+
+# IntellJ IDEA Stuff
+*.iml
+*.ipr
+*.iws
