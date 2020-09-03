@@ -1,15 +1,14 @@
 # train-reservation-mocking-kata-template-java
-Template for practicing mocking, integration and testing unit testing when integrating to background services with Java.
+Template for practicing mocking, integration and unit testing when integrating to background services with Java.
 
 ## Prerequisites
 * Java 8+
-* Gradle 6+
 * Some code editor (IDE) like IntelliJ IDEA or Eclipse
 
 ## Command line stuff
 * `./gradlew openIdea`
     * Opens project in IntelliJ IDEA and creates local configuraition
-* `.gradle run --args="express_2000 2"` 
+* `./gradlew run --args="express_2000 2"` 
     * Runs command line version of this app
 *  `gradle checkFormat` and `gradle format`
     * For checking code format and doing formatting
