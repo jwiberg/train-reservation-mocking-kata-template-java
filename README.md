@@ -11,6 +11,9 @@ Template for practicing mocking, integration and testing unit testing when integ
     * Opens project in IntelliJ IDEA and creates local configuraition
 * `.gradle run --args="express_2000 2"` 
     * Runs command line version of this app
+*  `gradle checkFormat` and `gradle format`
+    * For checking code format and doing formatting
+    * [spring-javaformat](https://github.com/spring-io/spring-javaformat)
 * Check gradle documentation [here](https://docs.gradle.org/current/userguide/userguide.html)
     * `gradle build, gradle compile, gradle test` etc.
 
