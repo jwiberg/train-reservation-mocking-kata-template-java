@@ -21,7 +21,7 @@ Template for practicing mocking, integration and unit testing when integrating t
 * [Junit Jupiter](https://junit.org/junit5/docs/current/user-guide/)
 * [Mockito](https://site.mockito.org/)
 
-# Background service used
+# Background services used
 * [Train Data Service](https://github.com/jwiberg/train-data-service)
 * [Booking Reference Service](https://github.com/jwiberg/booking-reference-service)
 
