@@ -46,9 +46,7 @@ public class TrainDataService {
 	}
 
 	public boolean doReservation(String trainId, String[] seats, String bookingReference) {
-		List<String> mappedSeats = Arrays.stream(seats).map((s) -> {
-			return "\"" + s + "\"";
-		}).collect(Collectors.toList());
+		List<String> mappedSeats = Arrays.stream(seats).map((s) -> "\"" + s + "\"").collect(Collectors.toList());
 
 		HttpResponse response = Unirest.post("https://gentle-brushlands-56642.herokuapp.com/reserve")
 				.field("train_id", trainId).field("seats", "[" + String.join(",", mappedSeats) + "]")
@@ -60,9 +58,6 @@ public class TrainDataService {
 		else if (response.getStatus() == 409) {
 			return false;
 		}
-
-		System.out.println("status: " + response.getStatus());
-		System.out.println("body: " + response.getBody().toString());
 		throw new RuntimeException("There is some technical issues in the train data service.");
 	}
 
