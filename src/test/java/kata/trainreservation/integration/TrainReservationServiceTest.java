@@ -20,8 +20,8 @@ public class TrainReservationServiceTest {
 
 	@BeforeEach
 	public void beforeEach() {
-		this.bookingReferenceServieUrl = "https://calm-temple-33806.herokuapp.com" + "/booking_reference";
-		this.trainDataServiceUrl = "https://gentle-brushlands-56642.herokuapp.com" + "/data_for_train/";
+		this.bookingReferenceServieUrl = "https://calm-temple-33806.herokuapp.com/booking_reference";
+		this.trainDataServiceUrl = "https://gentle-brushlands-56642.herokuapp.com/data_for_train/";
 	}
 
 	@Test
