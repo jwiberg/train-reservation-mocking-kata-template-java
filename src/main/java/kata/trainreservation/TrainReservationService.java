@@ -40,10 +40,8 @@ public class TrainReservationService {
 			throw new NoAvailableSeats();
 		}
 
-		boolean seatsAvailable = trainDataService.doReservation(trainId, reservedSeats.stream().map(seat -> {
-			return seat.getSeatId();
-		}).toArray(String[]::new), bookingReference);
-
+		boolean seatsAvailable = trainDataService.doReservation(trainId,
+				reservedSeats.stream().map(seat -> seat.getSeatId()).toArray(String[]::new), bookingReference);
 		if (!seatsAvailable) {
 			throw new NoAvailableSeats();
 		}
