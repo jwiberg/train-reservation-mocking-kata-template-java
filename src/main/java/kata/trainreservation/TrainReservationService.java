@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import kata.trainreservation.model.Reservation;
 import kata.trainreservation.model.Seat;
@@ -26,15 +27,12 @@ public class TrainReservationService {
 
 	public Reservation doReservation(String trainId, Integer count) throws NoAvailableSeats {
 		Train train = trainDataService.getTrain(trainId);
-
-		SortedSet<Seat> reservedSeats = new TreeSet<>();
 		String bookingReference = bookingReferenceService.createReference();
 
-		train.getSeats().stream().filter(seat -> Strings.isNullOrEmpty(seat.getBookingReference())).limit(count)
-				.forEach(seat -> {
-					reservedSeats
-							.add(new Seat(seat.getSeatId(), seat.getCoach(), seat.getSeatNumber(), bookingReference));
-				});
+		Set<Seat> reservedSeats = train.getSeats().stream()
+				.filter(seat -> Strings.isNullOrEmpty(seat.getBookingReference())).limit(count)
+				.map(seat -> new Seat(seat.getSeatId(), seat.getCoach(), seat.getSeatNumber(), bookingReference))
+				.collect(Collectors.toSet());
 
 		if (reservedSeats.size() < count) {
 			throw new NoAvailableSeats();
@@ -42,11 +40,12 @@ public class TrainReservationService {
 
 		boolean seatsAvailable = trainDataService.doReservation(trainId,
 				reservedSeats.stream().map(seat -> seat.getSeatId()).toArray(String[]::new), bookingReference);
+
 		if (!seatsAvailable) {
 			throw new NoAvailableSeats();
 		}
 
-		return new Reservation(reservedSeats);
+		return new Reservation(new TreeSet<>(reservedSeats));
 	}
 
 	public class NoAvailableSeats extends Exception {
