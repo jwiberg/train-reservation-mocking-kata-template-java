@@ -31,4 +31,5 @@ Template for practicing mocking, integration and unit testing when integrating t
 * Unhappy paths, technical and business errors
 * Are there some problems with test services? How can we avoid them?
 * Wishful thinking: is it possible to implement new feature when there is just a hint about coming new backtround service and how?
+* How about [Consumer-Driven Contract Tests](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/)?
 * Something else?
