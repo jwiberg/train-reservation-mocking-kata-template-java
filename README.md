@@ -1,6 +1,8 @@
 # train-reservation-mocking-kata-template-java
 Template for practicing mocking, integration and unit testing when integrating to background services with Java.
 
+Kata -> https://github.com/emilybache/KataTrainReservation
+
 ## Prerequisites
 * Java 8+
 * Some code editor (IDE) like IntelliJ IDEA or Eclipse
